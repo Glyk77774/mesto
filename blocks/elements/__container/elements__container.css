@@ -8,7 +8,4 @@
   background-color: #ffffff;
   border-radius: 10px;
   margin: 0 auto;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
 }
