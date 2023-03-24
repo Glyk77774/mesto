@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Место</title>
+    <link rel="stylesheet" href="./pages/index.css">
+  </head>
+  <body class="root">
+    <header class="header">
+      <img class="header__logo" src="./images/logo.png" alt="Логотип Место">
+    </header>
+    <main class="page">
+      <section class="profile">
+        <img class="profile__avatar" src="./images/Kusto.png" alt="Аватар">
+          <div class="profile__info">
+            <h1 class="profile__info-name">Жак-Ив Кусто</h1>
+            <button class="profile__edit-button" type="button" aria-label="редактировать профиль"></button>
+            <p class="profile__info-job">Исследователь океана</p>
+          </div>
+          <button class="profile__user-button" type="button" aria-label="добавить фото"></button>
+      </section>
+      <section class="elements">
+        <ul class="elements__list">
+          <li class="elements__item">
+            <img class="elements__image" src="./images/korochaevsk.png" alt="Корочаевск">
+            <div class="elements__container">
+              <h2 class="elements__title">Корочаевск</h2>
+              <button class="elements__heart" type="button" aria-label="like">
+              </button>
+            </div>
+          </li>
+          <li class="elements__item">
+            <img class="elements__image" src="./images/dombay.png" alt="Домбай">
+            <div class="elements__container">
+              <h2 class="elements__title">Домбай</h2>
+              <button class="elements__heart" type="button" aria-label="like">
+              </button>
+            </div>
+          </li>
+          <li class="elements__item">
+            <img class="elements__image" src="./images/gora elbrus.png" alt="Гора Эльбрус">
+            <div class="elements__container">
+              <h2 class="elements__title">Гора Эльбрус</h2>
+              <button class="elements__heart" type="button" aria-label="like">
+              </button>
+            </div>
+          </li>
+          <li class="elements__item">
+            <img class="elements__image" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg" alt="Фото места">
+            <div class="elements__container">
+              <h2 class="elements__title">Байкал</h2>
+              <button class="elements__heart" type="button" aria-label="like">
+              </button>
+            </div>
+          </li>
+          <li class="elements__item">
+            <img class="elements__image" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg" alt="Фото места">
+            <div class="elements__container">
+              <h2 class="elements__title">Байкал</h2>
+              <button class="elements__heart" type="button" aria-label="like">
+              </button>
+            </div>
+          </li>
+          <li class="elements__item">
+            <img class="elements__image" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg" alt="Фото места">
+            <div class="elements__container">
+              <h2 class="elements__title">Байкал</h2>
+              <button class="elements__heart" type="button" aria-label="like">
+              </button>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">© 2023 Ганеев Гали</p>
+    </footer>
+    <div class="popup popup__edit">
+      <div class="popup__container">
+        <button class="popup__close" type="button" aria-label="close"></button>
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <form class="popup__form" name="popupForm">
+            <input class="popup__input popup__input_type_name" type="text" name="username" placeholder="Имя">
+            <input class="popup__input popup__input_type_job" type="text" name="job" placeholder="Описание">
+            <button class="popup__button" type="submit">Сохранить
+            </button>
+          </form>
+      </div>
+    </div>
+    <script src="./script/index.js"></script>
+  </body>
+  </html>
