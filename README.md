@@ -18,4 +18,4 @@
 2. Добавить возможность сохранять фотографии добавленные пользователями
 
 
-Сылка на сайт : [Mesto](https://glyk77774.github.io/russian-travel/)
+Сылка на сайт : [Mesto](https://glyk77774.github.io/mesto/)
