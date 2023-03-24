@@ -1,5 +1,5 @@
 const infoButton = document.querySelector(".profile__edit-button");
-const editProfile = document.querySelector(".popup__edit");
+const editProfile = document.querySelector(".popup__edit-profile");
 const editProfileClose =editProfile.querySelector(".popup__close");
 const userName = document.querySelector(".profile__info-name");
 const jobName = document.querySelector(".profile__info-job")
