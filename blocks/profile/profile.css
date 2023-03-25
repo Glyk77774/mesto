@@ -4,10 +4,10 @@
   padding: 0;
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 950px) {
   .profile {
     align-items: center;
-    padding: 0 10px;
+    max-width: calc(100% - 19px * 2);
   }
 }
 
@@ -15,6 +15,5 @@
   .profile {
     align-items: center;
     flex-direction: column;
-    padding: 0 19px;
   }
 }
