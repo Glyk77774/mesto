@@ -13,8 +13,8 @@
 }
 
 @font-face {
-  src: url(./Inter-Bold.woff) format("woff"),
-       url(./Inter-Bold.woff2) format("woff2");
+  src: url(./Inter-Medium.woff) format("woff"),
+       url(./Inter-Medium.woff2) format("woff2");
   font-family: inter;
-  font-weight: 700;
+  font-weight: 500;
 }
