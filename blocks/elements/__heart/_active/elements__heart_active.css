@@ -2,7 +2,3 @@
   background-image: url('../../../../images/heartsactive.png');
   transition: opacity 0.3s ease;
 }
-
-.elements__heart_active:hover {
-  opacity: .5;
-}
