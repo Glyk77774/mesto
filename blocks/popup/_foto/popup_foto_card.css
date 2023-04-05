@@ -1,6 +1,6 @@
-.popup_photo_card {
+.popup_foto_card {
   position: fixed;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;

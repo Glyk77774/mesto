@@ -33,8 +33,6 @@ const closePopup = (popupName) => {
   popupName.classList.remove('popup_opened');
 };
 
-
-
 function submitHandlerEdit(event) {
   event.preventDefault();
   userName.textContent = userNameInput.value;
