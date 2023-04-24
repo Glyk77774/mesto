@@ -28,13 +28,15 @@ const popup = document.querySelectorAll(".popup");
 
 const openPopup = (popupName) => {
   popupName.classList.add("popup_opened");
+  document.addEventListener("keydown", handleButtonEsc);
 };
 
 const closePopup = (popupName) => {
   popupName.classList.remove("popup_opened");
+  document.removeEventListener("keydown", handleButtonEsc);
 };
 
-function handleBtnEsc(evt) {
+function handleButtonEsc(evt) {
   if (evt.key === "Escape") {
     const popupOpened = document.querySelector(".popup_opened");
     closePopup(popupOpened);
@@ -43,7 +45,7 @@ function handleBtnEsc(evt) {
 
 popup.forEach((popup) => {
   popup.addEventListener("mousedown", (evt) => {
-    if (evt.target.classList.contains("popup__container_overlay")) {
+    if (evt.target.classList.contains("popup")) {
       closePopup(popup);
     }
   });
