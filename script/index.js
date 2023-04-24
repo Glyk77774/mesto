@@ -24,6 +24,8 @@ const popupButtonClosePhoto = document.querySelector(".popup__close_foto");
 const elementsTemplate = document.querySelector("#elements-add").content;
 const elementsList = document.querySelector(".elements__list");
 
+const popup = document.querySelectorAll(".popup");
+
 const openPopup = (popupName) => {
   popupName.classList.add("popup_opened");
 };
@@ -31,6 +33,21 @@ const openPopup = (popupName) => {
 const closePopup = (popupName) => {
   popupName.classList.remove("popup_opened");
 };
+
+function handleBtnEsc(evt) {
+  if (evt.key === "Escape") {
+    const popupOpened = document.querySelector(".popup_opened");
+    closePopup(popupOpened);
+  }
+}
+
+popup.forEach((popup) => {
+  popup.addEventListener("mousedown", (evt) => {
+    if (evt.target.classList.contains("popup__container_overlay")) {
+      closePopup(popup);
+    }
+  });
+});
 
 const likeHeart = (event) => {
   event.target.classList.toggle("elements__heart_active");

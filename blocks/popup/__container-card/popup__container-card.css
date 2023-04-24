@@ -5,3 +5,7 @@
   max-width: 75vw;
   max-height: 75vh;
 }
+
+.popup__container-card::before {
+  opacity: 0.9;
+}

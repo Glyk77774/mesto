@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./pages/index.css">
     <script src="./script/cards.js" defer></script>
     <script src="./script/index.js" defer></script>
+    <script src="./script/validate.js" defer></script>
   </head>
   <body class="root">
     <header class="header">
@@ -31,31 +32,35 @@
       <p class="footer__copyright">© 2023 Ганеев Гали</p>
     </footer>
     <div class="popup popup_edit_profile">
-      <div class="popup__container">
+      <div class="popup__container popup__container_overlay">
         <button class="popup__close" type="button" aria-label="close"></button>
           <h2 class="popup__title">Редактировать профиль</h2>
           <form method="post" class="popup__form" name="popupForm">
-            <input class="popup__input popup__input_type_name" type="text" name="username" placeholder="Имя">
-            <input class="popup__input popup__input_type_job" type="text" name="job" placeholder="Описание">
-            <button class="popup__button" type="submit">Сохранить
+            <input class="popup__input popup__input_type_name popup__input_type_error" type="text" id="name" value="" placeholder="Имя" minlength="2" maxlength="40" required="">
+            <span id="name-error" class="popup__error popup__error_visible">Текст должен быть не короче 2&nbsp;симв. Длина текста сейчас: 1&nbsp;символ.</span>
+            <input class="popup__input popup__input_type_job popup__input_type_error" type="text" id="job" value="" placeholder="Описание" minlength="2" maxlength="200" required="">
+            <span id="job-error" class="popup__error popup__error_visible">Текст должен быть не короче 2&nbsp; симв. Длина текста сейчас: 1&nbsp; символ.</span>  
+            <button class="popup__button popup__button_disabled" type="submit">Сохранить
             </button>
           </form>
       </div>
     </div>
       <div class="popup popup_add_foto">
-        <div class="popup__container">
+        <div class="popup__container popup__container_overlay">
           <button class="popup__close popup__close_card" type="button" aria-label="Close"></button>
             <h2 class="popup__title">Новое место</h2>
             <form method="post" class="popup__form popup__form_foto" name="form-info">
-              <input class="popup__input popup__input_type_title" type="text" value="" placeholder="Название">
-              <input class="popup__input  popup__input_type_link" type="url" value="" placeholder="Ссылка на картинку">
-              <button class="popup__button" type="submit">Создать
+              <input class="popup__input popup__input_type_title popup__input_type_error" type="text" id="title" value="" placeholder="Название" minlength="2" maxlength="30" required="">
+              <span id="title-error" class="popup__error popup__error_visible">Текст должен быть не короче 2&nbsp;симв. Длина текста сейчас: 1&nbsp;символ.</span>
+              <input type="url" id="link" value="" placeholder="Ссылка на картинку" class="popup__input  popup__input_type_link popup__input_type_error">
+              <span id="link-error" class="popup__error popup__error_visible">Введите адрес сайта</span>
+              <button class="popup__button popup__button_disabled" type="submit">Создать
               </button>
             </form>
         </div>
      </div>
      <div class="popup popup_foto_card">
-      <div class="popup__container-card">
+      <div class="popup__container-card popup__container_overlay">
         <button class="popup__close popup__close_foto" type="button" aria-label="Close"></button>
         <img class="popup__image-card" src="#" alt="Фото места">
         <h3 class="popup__title-card">Байкал</h3>
