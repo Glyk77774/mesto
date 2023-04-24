@@ -25,27 +25,28 @@ const elementsTemplate = document.querySelector("#elements-add").content;
 const elementsList = document.querySelector(".elements__list");
 
 const popup = document.querySelectorAll(".popup");
+const buttonSave = document.querySelector(".popup__button");
 
-const openPopup = (popupName) => {
-  popupName.classList.add("popup_opened");
+function openPopup(popup) {
+  popup.classList.add("popup_opened");
   document.addEventListener("keydown", handleButtonEsc);
-};
+}
 
-const closePopup = (popupName) => {
-  popupName.classList.remove("popup_opened");
+function closePopup(popup) {
+  popup.classList.remove("popup_opened");
   document.removeEventListener("keydown", handleButtonEsc);
-};
+}
 
-function handleButtonEsc(evt) {
-  if (evt.key === "Escape") {
+function handleButtonEsc(event) {
+  if (event.key === "Escape") {
     const popupOpened = document.querySelector(".popup_opened");
     closePopup(popupOpened);
   }
 }
 
 popup.forEach((popup) => {
-  popup.addEventListener("mousedown", (evt) => {
-    if (evt.target.classList.contains("popup")) {
+  popup.addEventListener("mousedown", (event) => {
+    if (event.target.classList.contains("popup")) {
       closePopup(popup);
     }
   });

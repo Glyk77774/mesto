@@ -10,27 +10,11 @@ const validationConfig = {
 function enableValidation(config) {
   const forms = Array.from(document.querySelectorAll(config.formSelector));
   forms.forEach((form) => {
-    form.addEventListener("submit", (evt) => {
-      evt.preventDefault();
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
     });
     setHandlers(form, config);
   });
-}
-
-function validateInput(form, input, config) {
-  const error = form.querySelector(`#${input.id}-error`);
-  if (!input.validity.valid) {
-    input.classList.add(config.inputErrorClass);
-    error.textContent = input.validationMessage;
-  } else {
-    input.classList.remove(config.inputErrorClass);
-    error.classList.remove(config.errorClass);
-    error.textContent = "";
-  }
-}
-
-function hasInvalidInput(inputs) {
-  return inputs.some((input) => !input.validity.valid);
 }
 
 function setHandlers(form, config) {
@@ -45,8 +29,34 @@ function setHandlers(form, config) {
   });
 }
 
+function validateInput(form, input, config) {
+  if (!input.validity.valid) {
+    const error = form.querySelector(`#${input.id}-error`);
+    input.classList.add(config.inputErrorClass);
+    error.classList.add(config.errorClass);
+    error.textContent = input.validationMessage;
+  } else {
+    const error = form.querySelector(`#${input.id}-error`);
+    input.classList.remove(config.inputErrorClass);
+    error.classList.remove(config.errorClass);
+    error.textContent = "";
+  }
+}
+
+function removeDisabledButtonState(button, input) {
+  button.classList.remove(input.inactiveButtonClass);
+  button.removeAttribute("disabled");
+}
+
+function addDisabledButtonState(button, input) {
+  button.classList.add(input.inactiveButtonClass);
+  button.setAttribute("disabled", true);
+}
+
 function hasInvalidInput(inputs) {
-  return inputs.some((input) => !input.validity.valid);
+  return inputs.some((input) => {
+    return !input.validity.valid;
+  });
 }
 
 function toggleButtonState(inputs, button, config) {
@@ -56,15 +66,9 @@ function toggleButtonState(inputs, button, config) {
     removeDisabledButtonState(button, config);
   }
 }
-
-function removeDisabledButtonState(button, config) {
-  button.classList.remove(config.inactiveButtonClass);
-  button.removeAttribute("disabled");
-}
-
-function addDisabledButtonState(button, config) {
-  button.classList.add(config.inactiveButtonClass);
-  button.setAttribute("disabled", true);
-}
+/*
+function hasInvalidInput(inputs) {
+  return inputs.some((input) => !input.validity.valid);
+}*/
 
 enableValidation(validationConfig);
