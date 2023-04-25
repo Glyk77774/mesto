@@ -100,7 +100,6 @@ const submitAddFoto = (event) => {
     name: inputPlaceTitle.value,
     link: inputPlaceLink.value,
   });
-  event.target.reset();
   closePopup(fotoEdit);
 };
 
