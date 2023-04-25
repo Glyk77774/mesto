@@ -100,6 +100,7 @@ const submitAddFoto = (event) => {
     name: inputPlaceTitle.value,
     link: inputPlaceLink.value,
   });
+  event.target.reset();
   closePopup(fotoEdit);
 };
 
@@ -132,5 +133,19 @@ popupButtonClosePhoto.addEventListener("click", () => {
   closePopup(popupPhotoCard);
 });
 
-formFotoEdit.addEventListener("submit", submitAddFoto);
+formFotoEdit.addEventListener("submit", (e) => {
+  submitAddFoto(e);
+  toggleButtonState(formFotoEdit, fotoButtonAdd, {
+    inactiveButtonClass: "popup__button_disabled",
+  });
+});
 popupEditForm.addEventListener("submit", submitHandlerEdit);
+
+/*enableValidation({
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button",
+  inactiveButtonClass: "popup__button_invalid",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__error_visible",
+});*/
