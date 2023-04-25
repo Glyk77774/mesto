@@ -26,7 +26,7 @@ const elementsList = document.querySelector(".elements__list");
 const placesContainerElement = document.querySelector(".elements");
 
 const popup = document.querySelectorAll(".popup");
-const buttonSave = document.querySelector(".popup__button");
+/*const buttonSave = document.querySelector(".popup__button");*/
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
@@ -121,6 +121,15 @@ fotoButtonAdd.addEventListener("click", () => {
   openPopup(fotoEdit);
 });
 
+const submitFotoCard = formFotoEdit.querySelector(".popup__button");
+formFotoEdit.addEventListener("submit", (event) => {
+  submitAddFoto(event);
+  // проверка валидности полей ввода после отправки формы и обнуления иinput'ов
+  toggleButtonState(formFotoEdit, submitFotoCard, {
+    inactiveButtonClass: "popup__button_disabled",
+  });
+});
+
 profileEditClose.addEventListener("click", () => {
   closePopup(profileEdit);
 });
@@ -133,19 +142,5 @@ popupButtonClosePhoto.addEventListener("click", () => {
   closePopup(popupPhotoCard);
 });
 
-formFotoEdit.addEventListener("submit", (event) => {
-  submitAddFoto(event);
-  toggleButtonState(formFotoEdit, fotoButtonAdd, {
-    inactiveButtonClass: "popup__button_disabled",
-  });
-});
+/*formFotoEdit.addEventListener("submit", submitAddFoto);*/
 popupEditForm.addEventListener("submit", submitHandlerEdit);
-
-enableValidation({
-  formSelector: ".popup__form",
-  inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__button",
-  inactiveButtonClass: "popup__button_invalid",
-  inputErrorClass: "popup__input_type_error",
-  errorClass: "popup__error_visible",
-});
