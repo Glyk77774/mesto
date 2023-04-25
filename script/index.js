@@ -26,7 +26,11 @@ const elementsList = document.querySelector(".elements__list");
 const placesContainerElement = document.querySelector(".elements");
 
 const popup = document.querySelectorAll(".popup");
-/*const buttonSave = document.querySelector(".popup__button");*/
+
+const submitFotoCard = formFotoEdit.querySelector(".popup__button");
+const inputsArrayFotoForm = Array.from(
+  formFotoEdit.querySelectorAll(".popup__input")
+);
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
@@ -121,11 +125,9 @@ fotoButtonAdd.addEventListener("click", () => {
   openPopup(fotoEdit);
 });
 
-const submitFotoCard = formFotoEdit.querySelector(".popup__button");
 formFotoEdit.addEventListener("submit", (event) => {
   submitAddFoto(event);
-  // проверка валидности полей ввода после отправки формы и обнуления иinput'ов
-  toggleButtonState(formFotoEdit, submitFotoCard, {
+  toggleButtonState(inputsArrayFotoForm, submitFotoCard, {
     inactiveButtonClass: "popup__button_disabled",
   });
 });
@@ -142,5 +144,4 @@ popupButtonClosePhoto.addEventListener("click", () => {
   closePopup(popupPhotoCard);
 });
 
-/*formFotoEdit.addEventListener("submit", submitAddFoto);*/
 popupEditForm.addEventListener("submit", submitHandlerEdit);

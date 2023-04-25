@@ -52,12 +52,6 @@ function addDisabledButtonState(button, input) {
   button.setAttribute("disabled", true);
 }
 
-/*function hasInvalidInput(inputs) {
-  return inputs.some((input) => {
-    return !input.validity.valid;
-  });
-}*/
-
 function toggleButtonState(inputs, button, config) {
   if (hasInvalidInput(inputs)) {
     addDisabledButtonState(button, config);
