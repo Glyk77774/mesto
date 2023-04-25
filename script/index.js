@@ -93,15 +93,27 @@ initialCards.forEach((cardData) => {
   renderElements(cardData);
 });
 
-const submitAddFoto = (event) => {
+/*const submitAddFoto = (event) => {
   event.preventDefault();
   renderElements({
     name: inputPlaceTitle.value,
     link: inputPlaceLink.value,
   });
+  toggleButtonState(buttonSave, false, validationConfig);
   event.target.reset();
   closePopup(fotoEdit);
-};
+};*/
+
+function submitAddFoto(event) {
+  event.preventDefault();
+  const placeName = inputPlaceTitle.value;
+  const placeUrl = inputPlaceLink.value;
+  const newPlace = createElement({ name: placeName, link: placeUrl });
+  placesContainerElement.prepend(newPlace);
+  popupPlaceEditorForm.reset();
+  setButtonState(createButtonNode, false, validationConfig);
+  closePopUp(popupPlaceEditorNode);
+}
 
 function submitHandlerEdit(event) {
   event.preventDefault();

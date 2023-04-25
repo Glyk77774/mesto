@@ -33,7 +33,6 @@ function validateInput(form, input, config) {
   if (!input.validity.valid) {
     const error = form.querySelector(`#${input.id}-error`);
     input.classList.add(config.inputErrorClass);
-    error.classList.add(config.errorClass);
     error.textContent = input.validationMessage;
   } else {
     const error = form.querySelector(`#${input.id}-error`);
@@ -45,7 +44,7 @@ function validateInput(form, input, config) {
 
 function removeDisabledButtonState(button, input) {
   button.classList.remove(input.inactiveButtonClass);
-  button.removeAttribute("disabled");
+  button.removeAttribute("disabled", false);
 }
 
 function addDisabledButtonState(button, input) {

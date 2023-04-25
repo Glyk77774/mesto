@@ -52,10 +52,9 @@
             <form method="post" class="popup__form popup__form_foto" name="form-info" novalidate="">
               <input class="popup__input popup__input_type_title" type="text" id="title" value="" placeholder="Название" minlength="2" maxlength="30" required="">
               <span id="title-error" class="popup__error"></span>
-              <input type="url" id="link" value="" placeholder="Ссылка на картинку" class="popup__input popup__input_type_link">
-              <span id="link-error" class="popup__error"></span>
-              <button class="popup__button" type="submit">Создать
-              </button>
+              <input type="url" required id="link" value="" placeholder="Ссылка на картинку" class="popup__input popup__input_type_link">
+              <span id="link-error" class="popup__error" required></span>
+              <button class="popup__button" type="submit">Создать</button>
             </form>
         </div>
      </div>
