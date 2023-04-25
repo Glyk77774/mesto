@@ -100,9 +100,7 @@ const submitAddFoto = (event) => {
     name: inputPlaceTitle.value,
     link: inputPlaceLink.value,
   });
-  addDisabledButtonState(buttonSave, validationConfig);
   event.target.reset();
-
   closePopup(fotoEdit);
 };
 
