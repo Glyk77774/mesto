@@ -1,32 +1,6 @@
-import { Card } from "./cards.js";
+import { Card } from "./Card.js";
 import { FormValidator } from "./FormValidator.js";
-
-export const initialCards = [
-  {
-    title: "Архыз",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
-  },
-  {
-    title: "Челябинская область",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
-  },
-  {
-    title: "Иваново",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
-  },
-  {
-    title: "Камчатка",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
-  },
-  {
-    title: "Холмогорский район",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
-  },
-  {
-    title: "Байкал",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
-  },
-];
+import { initialCards } from "./initialCards.js";
 
 const infoButton = document.querySelector(".profile__edit-button");
 const profileEdit = document.querySelector(".popup_edit_profile");
@@ -63,8 +37,6 @@ function openPopup(popup) {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closePopupClickEsc);
   popup.addEventListener("mousedown", closePopupClickOverlay);
-  formEditProfileValidator.restartFormValidation();
-  formAddCardValidator.restartFormValidation();
 }
 
 function closePopup(popup) {
