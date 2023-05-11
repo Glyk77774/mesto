@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Место</title>
     <link rel="stylesheet" href="./pages/index.css">
-    <script src="./script/cards.js" defer></script>
-    <script src="./script/validate.js" defer></script>
-    <script src="./script/index.js" defer></script>
+    <script type="module" src="./script/index.js"></script>
+    <script type="module" src="./script/cards.js" ></script>
+    <script type="module" src="./script/FormValidator.js"></script>
   </head>
   <body class="root">
     <header class="header">
@@ -35,7 +35,7 @@
       <div class="popup__container">
         <button class="popup__close" type="button" aria-label="close"></button>
           <h2 class="popup__title">Редактировать профиль</h2>
-          <form method="post" class="popup__form" name="popupForm" novalidate="">
+          <form method="post" class="popup__form popup__form_profile" name="popupForm" novalidate="">
             <input class="popup__input popup__input_type_name" type="text" id="name" value="" placeholder="Имя" minlength="2" maxlength="40" required="">
             <span id="name-error" class="popup__error"></span>
             <input class="popup__input popup__input_type_job" type="text" id="job" value="" placeholder="Описание" minlength="2" maxlength="200" required="">
