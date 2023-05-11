@@ -33,7 +33,6 @@ const selectors = {
 };
 
 function openPopup(popup) {
-  formFotoEdit.reset();
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closePopupClickEsc);
   popup.addEventListener("mousedown", closePopupClickOverlay);
