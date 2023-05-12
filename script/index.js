@@ -63,6 +63,7 @@ function handleProfileFormSubmit(event) {
   jobName.textContent = jobInput.value;
   closePopup(profileEdit);
 }
+
 formElementEdit.addEventListener("submit", handleProfileFormSubmit);
 
 function openPicture(title, link) {
@@ -79,11 +80,14 @@ function handleCardFormSubmit(event) {
     link: inputPlaceLink.value,
   };
   addNewCard(myNewCard);
-  closePopup(fotoEdit);
   formFotoEdit.reset();
+  closePopup(fotoEdit);
 }
 
-formFotoEdit.addEventListener("submit", handleCardFormSubmit);
+formFotoEdit.addEventListener("submit", (event) => {
+  handleCardFormSubmit(event);
+  formAddCardValidator.restartFormValidation();
+});
 
 function createCard(title, link) {
   return new Card(title, link, "#elements-add").generateCard();
@@ -112,12 +116,10 @@ popupButtonClosePhoto.addEventListener("click", () =>
   closePopup(popupPhotoCard)
 );
 
-const formEditProfile = document.querySelector(".popup_edit_profile");
-const formEditProfileValidator = new FormValidator(selectors, formEditProfile);
+const formEditProfileValidator = new FormValidator(selectors, profileEdit);
 formEditProfileValidator.enableValidation();
 
-const formAddCard = document.querySelector(".popup_add_foto");
-const formAddCardValidator = new FormValidator(selectors, formAddCard);
+const formAddCardValidator = new FormValidator(selectors, fotoEdit);
 formAddCardValidator.enableValidation();
 
 export { openPicture };
